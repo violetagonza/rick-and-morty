@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import Input from './Input';
+import Filter from './Filter';
 import CharacterList from './CharacterList';
+import CharacterDetail from './CharacterDetail';
 import get from '../services/get';
 const App = () => {
   const [charactersInfo, setCharactersInfo] = useState([]);
@@ -23,10 +24,13 @@ const App = () => {
   };
 
   return (
-    <main>
-      <Input handleChange={handleChange} />
-      <CharacterList charactersInfo={charactersNames === '' ? charactersInfo : charactersNames} />
-    </main>
+    <>
+      <main>
+        <Filter handleChange={handleChange} />
+        <CharacterList charactersInfo={charactersNames === '' ? charactersInfo : charactersNames} />
+      </main>
+      <CharacterDetail />
+    </>
   );
 };
 
