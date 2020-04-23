@@ -1,10 +1,12 @@
 .card {
-  grid-column: span 1;
+  @media all and (min-width: 768px) {
+    grid-column: span 1;
+  }
   width: 300px;
   background-color: #1e6d56;
   border-radius: 25px;
   box-sizing: border-box;
-  margin: 5px;
+  margin: 20px;
   list-style: none;
   &--link {
     text-decoration: none;

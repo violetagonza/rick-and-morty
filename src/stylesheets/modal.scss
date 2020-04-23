@@ -26,3 +26,11 @@
     margin-left: 10px;
   }
 }
+@media all and (max-width: 768px) {
+  .modal {
+    flex-direction: column;
+    width: 330px;
+    top: 30%;
+    left: -13%;
+  }
+}

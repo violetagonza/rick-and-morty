@@ -1,19 +1,21 @@
 .list {
-  display: grid;
-  grid-template-columns: 1fr;
+  text-align: center;
   margin: 20px;
   padding: 10px;
 }
 @media all and (min-width: 768px) {
   .list {
-    grid-template-columns: 1fr 1fr;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     padding: 0;
   }
 }
 
 @media all and (min-width: 1200px) {
   .list {
-    grid-template-columns: 1fr 1fr 1fr;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     padding: 0;
   }
 }

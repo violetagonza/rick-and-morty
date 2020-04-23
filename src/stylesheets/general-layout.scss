@@ -6,12 +6,13 @@ body {
 }
 .header {
   text-align: center;
+  padding-bottom: 30px;
   background-color: black;
   &--img {
     width: 400px;
   }
 }
-@media all and (min-width: 320px) {
+@media all and (max-width: 320px) {
   .header--img {
     width: 300px;
   }
@@ -19,4 +20,12 @@ body {
 .main {
   width: 100vw;
   background-color: black;
+}
+
+@media all and (max-width: 768px) {
+  .main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
