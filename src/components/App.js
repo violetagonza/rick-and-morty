@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Filter from './Filter';
 import CharacterList from './CharacterList';
 import CharacterDetail from './CharacterDetail';
+import { Route, Switch } from 'react-router-dom';
 import get from '../services/get';
 const App = () => {
   const [charactersInfo, setCharactersInfo] = useState([]);
@@ -23,13 +24,26 @@ const App = () => {
     setCharactersnames(filteredCharacter);
   };
 
+  const handleCharacterDetail = (props) => {
+    const characterId = props.match.params.id;
+    const foundCharacter = charactersInfo.find((character) => {
+      console.log(character.id, characterId);
+
+      return character.id === parseInt(characterId);
+    });
+
+    return <CharacterDetail characterInfo={foundCharacter} />;
+  };
   return (
     <>
       <main>
         <Filter handleChange={handleChange} />
-        <CharacterList charactersInfo={charactersNames === '' ? charactersInfo : charactersNames} />
+        <CharacterList handleClick={handleCharacterDetail} charactersInfo={charactersNames === '' ? charactersInfo : charactersNames} />
       </main>
-      <CharacterDetail />
+
+      <Switch>
+        <Route path='/character/:id' render={handleCharacterDetail} />
+      </Switch>
     </>
   );
 };
