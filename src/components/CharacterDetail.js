@@ -4,7 +4,12 @@ import { Link } from 'react-router-dom';
 const CharacterDetail = (props) => {
   console.log(props.characterInfo);
   if (props.characterInfo === undefined) {
-    return <aside>Aquí no hay nada</aside>;
+    return (
+      <aside>
+        <Link to='/'> Volver </Link>
+        <p>Aquí no hay nada</p>
+      </aside>
+    );
   } else {
     return (
       <aside>

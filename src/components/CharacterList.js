@@ -1,7 +1,9 @@
 import React from 'react';
 import CharacterCard from './CharacterCard';
 const CharacterList = (props) => {
-  const htmlCode = props.charactersInfo.map((character) => {
+  let htmlCode;
+
+  htmlCode = props.charactersInfo.map((character) => {
     return <CharacterCard key={character.id} character={character} />;
   });
 

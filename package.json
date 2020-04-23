@@ -18,7 +18,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "docs": "rm -rf docs && react-scripts build && mv build docs",
-    "push-docs": "npm run docs && git add docs/* && git commit -m \"Update docs\" && git push"
+    "push-docs": "npm run docs && git add docs/* && git commit -m \":arrow_up: Update docs\" && git push"
   },
   "eslintConfig": {
     "extends": "react-app"

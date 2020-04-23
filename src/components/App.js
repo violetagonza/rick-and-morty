@@ -18,20 +18,26 @@ const App = () => {
   //Handler del input
   const handleChange = (value) => {
     // Filtro el estado characterInfo con lo que la usuaria escribe en el input, meto los resultados en el estado charactersNames
+    const noFound = [{ name: `Error: ${value} no se ha encontrado`, photo: 'https://www.cordesansantiago.cl/wp-content/uploads/2016/11/blank-profile-picture-973460_960_720.png', id: 'akjhsJK' }];
     const filteredCharacter = charactersInfo.filter((character) => {
       return character.name.toUpperCase().includes(value.toUpperCase());
     });
-    setCharactersnames(filteredCharacter);
-  };
+    console.log(filteredCharacter);
 
+    if (filteredCharacter.length === 0) {
+      setCharactersnames(noFound);
+    } else {
+      setCharactersnames(filteredCharacter);
+    }
+  };
+  console.log(charactersNames);
+
+  //Renderizo el modal
   const handleCharacterDetail = (props) => {
     const characterId = props.match.params.id;
     const foundCharacter = charactersInfo.find((character) => {
-      console.log(character.id, characterId);
-
       return character.id === parseInt(characterId);
     });
-
     return <CharacterDetail characterInfo={foundCharacter} />;
   };
   return (
