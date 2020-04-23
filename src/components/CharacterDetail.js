@@ -1,4 +1,5 @@
 import React from 'react';
+import '../stylesheets/modal.scss';
 import { Link } from 'react-router-dom';
 
 const CharacterDetail = (props) => {
@@ -12,7 +13,7 @@ const CharacterDetail = (props) => {
     );
   } else {
     return (
-      <aside>
+      <aside className='modal'>
         <Link to='/'> Volver </Link>
         <img src={props.characterInfo.photo} alt={props.characterInfo.name} />
         <h4>{`Nombre:${props.characterInfo.name}`}</h4>

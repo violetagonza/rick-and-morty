@@ -1,0 +1,22 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+.header {
+  text-align: center;
+  background-color: #97ce4c;
+  &--img {
+    width: 400px;
+  }
+}
+@media all and (min-width: 320px) {
+  .header--img {
+    width: 300px;
+  }
+}
+.main {
+  width: 100vw;
+  background-color: #97ce4c;
+}
