@@ -1,11 +1,28 @@
 .modal {
-  background-color: #e89ac7;
-  height: 500px;
-  width: 500px;
-  border: 5px black solid;
   position: fixed;
-  z-index: 99999;
+  top: 30%;
+  left: 8%;
+  background-color: #e89ac7;
+  width: 500px;
   transform: translate(20vw);
   border-radius: 25px;
   padding: 10px;
+  display: flex;
+  box-shadow: 10px 14px 62px 0px rgba(0, 0, 0, 0.75);
+
+  &--link {
+    display: block;
+    text-decoration: none;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  &--img {
+    border-radius: 20px;
+  }
+  &--text {
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 10px;
+  }
 }

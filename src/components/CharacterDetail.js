@@ -3,24 +3,31 @@ import '../stylesheets/modal.scss';
 import { Link } from 'react-router-dom';
 
 const CharacterDetail = (props) => {
-  console.log(props.characterInfo);
   if (props.characterInfo === undefined) {
     return (
-      <aside>
-        <Link to='/'> Volver </Link>
-        <p>Aquí no hay nada</p>
+      <aside className='modal'>
+        <Link className='modal--link' to='/'>
+          <i className='fas fa-chevron-left'></i> Volver
+        </Link>
+        <p className='modal--text'>Aquí no hay nada</p>
       </aside>
     );
   } else {
     return (
       <aside className='modal'>
-        <Link to='/'> Volver </Link>
-        <img src={props.characterInfo.photo} alt={props.characterInfo.name} />
-        <h4>{`Nombre:${props.characterInfo.name}`}</h4>
-        <p>{`Estatus: ${props.characterInfo.status}`}</p>
-        <p>{`Especie: ${props.characterInfo.species}`}</p>
-        <p>{`Origen: ${props.characterInfo.origin}`}</p>
-        <p>{`Episodios: ${props.characterInfo.episodes}`}</p>
+        <div>
+          <Link className='modal--link' to='/'>
+            <i className='fas fa-chevron-left'></i> Volver
+          </Link>
+          <img className='modal--img' src={props.characterInfo.photo} alt={props.characterInfo.name} />
+        </div>
+        <div className='modal--text'>
+          <h4>{props.characterInfo.name}</h4>
+          <p>{`Estatus: ${props.characterInfo.status}`}</p>
+          <p>{`Especie: ${props.characterInfo.species}`}</p>
+          <p>{`Origen: ${props.characterInfo.origin}`}</p>
+          <p>{`Episodios: ${props.characterInfo.episodes}`}</p>
+        </div>
       </aside>
     );
   }

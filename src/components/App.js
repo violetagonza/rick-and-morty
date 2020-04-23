@@ -35,13 +35,11 @@ const App = () => {
   console.log(charactersNames);
 
   //Renderizo el modal
-
   const handleCharacterDetail = (props) => {
     const characterId = props.match.params.id;
     const foundCharacter = charactersInfo.find((character) => {
       return character.id === parseInt(characterId);
     });
-
     return <CharacterDetail characterInfo={foundCharacter} />;
   };
   return (
