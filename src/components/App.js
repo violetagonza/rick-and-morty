@@ -4,7 +4,7 @@ import CharacterList from './CharacterList';
 import get from '../services/get';
 const App = () => {
   const [charactersInfo, setCharactersInfo] = useState([]);
-  const [CharactersNames, setCharactersnames] = useState([]);
+  const [charactersNames, setCharactersnames] = useState('');
 
   //Llamada a la Api
   useEffect(() => {
@@ -13,19 +13,19 @@ const App = () => {
     });
   }, []);
 
+  //Handler del input
   const handleChange = (value) => {
-    console.log(value);
+    // Filtro el estado characterInfo con lo que la usuaria escribe en el input, meto los resultados en el estado charactersNames
     const filteredCharacter = charactersInfo.filter((character) => {
       return character.name.toUpperCase().includes(value.toUpperCase());
     });
     setCharactersnames(filteredCharacter);
-    console.log(filteredCharacter);
   };
 
   return (
     <main>
       <Input handleChange={handleChange} />
-      <CharacterList charactersInfo={CharactersNames} />
+      <CharacterList charactersInfo={charactersNames === '' ? charactersInfo : charactersNames} />
     </main>
   );
 };
