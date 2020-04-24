@@ -5,17 +5,17 @@ const CharacterCard = (props) => {
   if (props.character.species === 'Alien') {
     props.character.species = props.character.species + '👽';
   }
-  if (props.character.species === 'Human') {
-    props.character.species = 'Humano 👦';
-  }
-  if (props.character.gender === 'Female' && props.character.status === 'Dead') {
-    props.character.status = 'Muerta 💀';
-  }
   if (props.character.gender === 'Female' && props.character.species === 'Human') {
     props.character.species = 'Humana 👩';
   }
+  if (props.character.species === 'Human') {
+    props.character.species = 'Humano 👦';
+  }
   if (props.character.status === 'Alive') {
     props.character.status = 'Con vida 🤘';
+  }
+  if (props.character.gender === 'Female' && props.character.status === 'Dead') {
+    props.character.status = 'Muerta 💀';
   }
   if (props.character.status === 'Dead') {
     props.character.status = 'Muerto 💀';
@@ -23,7 +23,7 @@ const CharacterCard = (props) => {
   if (props.character.status === 'unknown') {
     props.character.status = 'Desconocido';
   }
-  if (props.character.origin === 'Earth (C-137)' || props.character.origin === 'Earth (C-137)') {
+  if (props.character.origin === 'Earth (C-137)' || props.character.origin === 'Earth (Replacement Dimension)') {
     props.character.origin = 'La Tierra';
   }
   if (props.character.origin === 'unknown') {
@@ -31,7 +31,7 @@ const CharacterCard = (props) => {
   }
   return (
     <li className='card' key={props.character.id}>
-      <Link className='card--link' to={`/character/${props.character.id}`}>
+      <Link title='Ver detalles' className='card--link' to={`/character/${props.character.id}`}>
         <div className='card-img'>
           <img className='card--img__photo' src={props.character.photo} alt={props.character.name} />
         </div>
