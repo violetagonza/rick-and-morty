@@ -47,11 +47,17 @@ const App = () => {
       <header className='header'>
         <img className='header--img' src={logo} alt='Rick y Morty' />
       </header>
-      <main className='main'>
-        <Filter handleChange={handleChange} />
-        <CharacterList handleClick={handleCharacterDetail} charactersInfo={charactersNames === '' ? charactersInfo : charactersNames} />
-      </main>
       <Switch>
+        <Route
+          exact
+          path='/'
+          render={() => (
+            <main className='main'>
+              <Filter handleChange={handleChange} />
+              <CharacterList handleClick={handleCharacterDetail} charactersInfo={charactersNames === '' ? charactersInfo : charactersNames} />
+            </main>
+          )}
+        />
         <Route path='/character/:id' render={handleCharacterDetail} />
       </Switch>
     </>
