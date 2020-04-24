@@ -10,7 +10,7 @@ const Input = (props) => {
   return (
     <form onSubmit={handleSubmit} className='form'>
       <label htmlFor='name'>
-        <input onChange={handleChange} className='form--input' type='text' name='name' id='name' placeholder='Busca un personaje'></input>
+        <input value={props.inputValue} onChange={handleChange} className='form--input' type='text' name='name' id='name' placeholder='Busca un personaje'></input>
       </label>
     </form>
   );

@@ -9,6 +9,7 @@ import '../stylesheets/general-layout.scss';
 const App = () => {
   const [charactersInfo, setCharactersInfo] = useState([]);
   const [charactersNames, setCharactersnames] = useState('');
+  const [inputValue, setInputValue] = useState('');
 
   //Llamada a la Api
   useEffect(() => {
@@ -20,6 +21,7 @@ const App = () => {
   //Handler del input
   const handleChange = (value) => {
     // Filtro el estado characterInfo con lo que la usuaria escribe en el input, meto los resultados en el estado charactersNames
+    setInputValue(value);
     const noFound = [{ name: `Lo sentimos: ${value} no se ha encontrado`, photo: 'https://www.cordesansantiago.cl/wp-content/uploads/2016/11/blank-profile-picture-973460_960_720.png', id: 'akjhsJK' }];
     const filteredCharacter = charactersInfo.filter((character) => {
       return character.name.toUpperCase().includes(value.toUpperCase());
@@ -53,7 +55,7 @@ const App = () => {
           path='/'
           render={() => (
             <main className='main'>
-              <Filter handleChange={handleChange} />
+              <Filter inputValue={inputValue} handleChange={handleChange} />
               <CharacterList handleClick={handleCharacterDetail} charactersInfo={charactersNames === '' ? charactersInfo : charactersNames} />
             </main>
           )}
