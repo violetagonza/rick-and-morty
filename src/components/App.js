@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Filter from './Filter';
 import CharacterList from './CharacterList';
 import CharacterDetail from './CharacterDetail';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Link } from 'react-router-dom';
 import logo from '../images/Rick_and_Morty-logo.png';
 import get from '../services/get';
 import '../stylesheets/general-layout.scss';
@@ -43,11 +43,19 @@ const App = () => {
     });
     return <CharacterDetail characterInfo={foundCharacter} />;
   };
+
+  const handleRestore = () => {
+    setInputValue('');
+    setCharactersnames('');
+  };
+
   return (
     <>
-      <header className='header'>
-        <img className='header--img' src={logo} alt='Rick y Morty' />
-      </header>
+      <Link title='Volver' onClick={handleRestore} to='/'>
+        <header className='header'>
+          <img className='header--img' src={logo} alt='Rick y Morty' />
+        </header>
+      </Link>
       <Switch>
         <Route
           exact
