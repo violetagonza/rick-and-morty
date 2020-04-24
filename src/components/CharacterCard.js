@@ -2,6 +2,31 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import '../stylesheets/card.scss';
 const CharacterCard = (props) => {
+  if (props.character.species === 'Alien') {
+    props.character.species = props.character.species + '👽';
+  }
+  if (props.character.species === 'Human') {
+    props.character.species = 'Humano 👦';
+  }
+  if (props.character.gender === 'Female') {
+    props.character.species = 'Humana 👩';
+    props.character.status = 'Muerta 💀';
+  }
+  if (props.character.status === 'Alive') {
+    props.character.status = 'Con vida 🤘';
+  }
+  if (props.character.status === 'Dead') {
+    props.character.status = 'Muerto 💀';
+  }
+  if (props.character.status === 'unknown') {
+    props.character.status = 'Desconocido';
+  }
+  if (props.character.origin.includes('Earth')) {
+    props.character.origin = 'La Tierra';
+  }
+  if (props.character.origin === 'unknown') {
+    props.character.origin = 'Desconocido';
+  }
   return (
     <li className='card' key={props.character.id}>
       <Link className='card--link' to={`/character/${props.character.id}`}>
