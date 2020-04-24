@@ -14,19 +14,21 @@ const CharacterDetail = (props) => {
     );
   } else {
     return (
-      <aside className='modal'>
-        <div>
-          <Link className='modal--link' to='/'>
-            <i className='fas fa-chevron-left'></i> Volver
-          </Link>
-          <img className='modal--img' src={props.characterInfo.photo} alt={props.characterInfo.name} />
-        </div>
-        <div className='modal--text'>
-          <h4>{props.characterInfo.name}</h4>
-          <p>{`Estatus: ${props.characterInfo.status}`}</p>
-          <p>{`Especie: ${props.characterInfo.species}`}</p>
-          <p>{`Origen: ${props.characterInfo.origin}`}</p>
-          <p>{`Episodios: ${props.characterInfo.episodes}`}</p>
+      <aside className='aside'>
+        <div className='modal'>
+          <div>
+            <Link className='modal--link' to='/'>
+              <i className='fas fa-chevron-left'></i> Volver
+            </Link>
+            <img className='modal--img' src={props.characterInfo.photo} alt={props.characterInfo.name} />
+          </div>
+          <div className='modal--text'>
+            <h4>{props.characterInfo.name}</h4>
+            <p>{`Estatus: ${props.characterInfo.status}`}</p>
+            <p>{`Especie: ${props.characterInfo.species}`}</p>
+            <p>{`Origen: ${props.characterInfo.origin}`}</p>
+            <p>{`Episodios: ${props.characterInfo.episodes}`}</p>
+          </div>
         </div>
       </aside>
     );

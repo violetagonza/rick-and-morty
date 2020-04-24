@@ -8,9 +8,11 @@ const CharacterCard = (props) => {
   if (props.character.species === 'Human') {
     props.character.species = 'Humano 👦';
   }
-  if (props.character.gender === 'Female') {
-    props.character.species = 'Humana 👩';
+  if (props.character.gender === 'Female' && props.character.status === 'Dead') {
     props.character.status = 'Muerta 💀';
+  }
+  if (props.character.gender === 'Female' && props.character.species === 'Human') {
+    props.character.species = 'Humana 👩';
   }
   if (props.character.status === 'Alive') {
     props.character.status = 'Con vida 🤘';

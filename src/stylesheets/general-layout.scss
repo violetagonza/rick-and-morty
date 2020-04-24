@@ -3,11 +3,13 @@
 }
 body {
   margin: 0;
+  background: rgb(136, 214, 47);
+  background: linear-gradient(0deg, rgba(136, 214, 47, 1) 0%, rgba(0, 0, 0, 1) 94%);
+  background-repeat: round;
 }
 .header {
   text-align: center;
   padding-bottom: 30px;
-  background-color: black;
   &--img {
     width: 400px;
   }
@@ -19,7 +21,9 @@ body {
 }
 .main {
   width: 100vw;
-  background-color: black;
+  background: rgb(136, 214, 47);
+  background: linear-gradient(0deg, rgba(136, 214, 47, 1) 0%, rgba(0, 0, 0, 1) 94%);
+  background-repeat: round;
 }
 
 @media all and (max-width: 768px) {

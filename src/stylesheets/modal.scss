@@ -1,19 +1,22 @@
+.aside {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+}
+
 .modal {
-  position: fixed;
-  top: 30%;
-  left: 8%;
-  background-color: #e89ac7;
+  background: rgb(148, 187, 233);
+  background: linear-gradient(0deg, rgba(148, 187, 233, 1) 0%, rgba(238, 174, 202, 0.9809782608695652) 100%);
   width: 500px;
-  transform: translate(20vw);
-  border-radius: 25px;
+  height: 350px;
+  border-radius: 15px;
   padding: 10px;
   display: flex;
-  box-shadow: 10px 14px 62px 0px rgba(0, 0, 0, 0.75);
 
   &--link {
     display: block;
     text-decoration: none;
-    color: black;
+    color: rgb(25, 116, 58);
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     margin-bottom: 5px;
