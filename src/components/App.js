@@ -51,11 +51,11 @@ const App = () => {
 
   return (
     <>
-      <Link title='Volver' onClick={handleRestore} to='/'>
-        <header className='header'>
+      <header className='header'>
+        <Link title='Volver' onClick={handleRestore} to='/'>
           <img className='header--img' src={logo} alt='Rick y Morty' />
-        </header>
-      </Link>
+        </Link>
+      </header>
       <Switch>
         <Route
           exact
