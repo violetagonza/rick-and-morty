@@ -21,7 +21,7 @@ const CharacterCard = (props) => {
   if (props.character.status === 'unknown') {
     props.character.status = 'Desconocido';
   }
-  if (props.character.origin.includes('Earth')) {
+  if (props.character.origin === 'Earth (C-137)' || props.character.origin === 'Earth (C-137)') {
     props.character.origin = 'La Tierra';
   }
   if (props.character.origin === 'unknown') {

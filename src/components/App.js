@@ -26,7 +26,6 @@ const App = () => {
     const filteredCharacter = charactersInfo.filter((character) => {
       return character.name.toUpperCase().includes(value.toUpperCase());
     });
-    console.log(filteredCharacter);
 
     if (filteredCharacter.length === 0) {
       setCharactersnames(noFound);
