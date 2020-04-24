@@ -14,15 +14,15 @@ body {
     width: 400px;
   }
 }
-@media all and (max-width: 320px) {
+@media all and (max-width: 360px) {
   .header--img {
+    text-align: center;
+    padding-left: 20px;
     width: 300px;
   }
 }
 .main {
-  width: 100vw;
-  background: rgb(136, 214, 47);
-  background: linear-gradient(0deg, rgba(136, 214, 47, 1) 0%, rgba(0, 0, 0, 1) 94%);
+  // width: 100vw;
   background-repeat: round;
 }
 

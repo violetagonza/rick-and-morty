@@ -13,3 +13,11 @@
     border: none;
   }
 }
+@media all and (max-width: 360px) {
+  .form {
+    margin-bottom: 0;
+    &--input {
+      height: 35px;
+    }
+  }
+}
