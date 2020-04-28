@@ -15,6 +15,7 @@ const get = () => {
           species: result.species,
           gender: result.gender,
           origin: result.origin.name,
+          type: result.type,
           episodes: parseInt(result.episode.length),
         });
       });
